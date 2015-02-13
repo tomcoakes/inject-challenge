@@ -19,5 +19,13 @@ describe Array do
       expect{[1].injector}.not_to raise_error
     end
 
+    it "can be passed an initial value" do
+      expect([1].injector(2)).to eq(2)
+    end
+
+    it "will use the value at index[0] when not explicitly passed an initial value" do
+      expect([1].injector).to eq(1)
+    end
+
   end
 end

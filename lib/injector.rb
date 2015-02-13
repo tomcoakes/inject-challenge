@@ -1,7 +1,7 @@
 class Array
 
-  def injector
-    yield if block_given?
+  def injector(initial_value = self[0])
+    block_given? ? yield : initial_value
   end
 
 end
