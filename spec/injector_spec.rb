@@ -3,7 +3,6 @@ require 'injector'
 describe Array do
   describe "Array#injector" do
 
-  # should return the accumulator argument
   # should return 1 when calling on [1] with the block {|accum, element| accum + element}
   # should return 15 when calling on [1, 2, 3, 4, 5] with the block {|accum, element| accum + element}
   # should accept a method argument (as a symbol)
