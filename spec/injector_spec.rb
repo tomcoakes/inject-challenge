@@ -3,8 +3,6 @@ require 'injector'
 describe Array do
   describe "Array#injector" do
 
-  # should accept a method argument (as a symbol)
-
     it "can take a block as an argument" do
       expect([1].injector{"this is a block"}).to eq("this is a block")
     end
