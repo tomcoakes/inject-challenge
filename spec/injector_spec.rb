@@ -37,5 +37,9 @@ describe Array do
       expect([1, 2, 3, 4, 5].injector(:+)).to eq(15)
     end
 
+    it "should return nil when called on an empty array" do
+      expect([].injector {|accum, element| accum + element}).to eq(nil)
+    end
+
   end
 end

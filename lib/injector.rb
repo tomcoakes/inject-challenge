@@ -1,6 +1,7 @@
 class Array
 
   def injector(initial_value = 0)
+    return nil if self.empty?
     if block_given?
       self.each {|element| initial_value = yield(initial_value, element)}
       initial_value
