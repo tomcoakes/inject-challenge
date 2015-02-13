@@ -3,8 +3,6 @@ require 'injector'
 describe Array do
   describe "Array#injector" do
 
-  # should return 1 when calling on [1] with the block {|accum, element| accum + element}
-  # should return 15 when calling on [1, 2, 3, 4, 5] with the block {|accum, element| accum + element}
   # should accept a method argument (as a symbol)
 
     it "can take a block as an argument" do
@@ -33,6 +31,10 @@ describe Array do
 
     it "returns 20 when called on [1, 2, 3, 4, 5] with an initial value of 5" do
       expect([1, 2, 3, 4, 5].injector(5) {|accum, element| accum + element}).to eq(20)
+    end
+
+    it "runs the associated method when passed a symbol" do
+      expect([1, 2, 3, 4, 5].injector(:+)).to eq(15)
     end
 
   end
